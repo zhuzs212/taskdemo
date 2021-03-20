@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuzs.taskdemo.mapper.SectionInfoMapper">
+    <resultMap id="SectionInfoDO" type="com.zhuzs.taskdemo.entity.domain.SectionInfoDO">
+        <id column="id" property="id"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="district" property="district"/>
+        <result column="staname" property="staname"/>
+        <result column="mark" property="mark"/>
+    </resultMap>
+    <sql id="Section_Info_Column">
+        id,
+        province,
+        city,
+        district,
+        staname,
+        mark
+    </sql>
+
+    <!--  查询 断面信息  -->
+    <select id="getSectionInfoList" resultMap="SectionInfoDO">
+        SELECT
+        <include refid="Section_Info_Column"/>
+        FROM gis_section_info
+        WHERE
+        province = #{param.province}
+        <if test="param.city != null and param.city != ''">
+            AND city = #{param.city}
+        </if>
+        <if test="param.district != null and param.district != ''">
+            AND district = #{param.district}
+        </if>
+        <if test="param.sectionInfoNameSet != null and  param.sectionInfoNameSet.size != 0">
+            AND staname IN
+            <foreach collection="param.sectionInfoNameSet" item="staname" open="(" close=")" separator=",">
+                #{staname}
+            </foreach>
+        </if>
+    </select>
+
+    <!--  批量新增断面信息  -->
+    <insert id="addBatch">
+        INSERT INTO gis_section_info(
+            province,
+            city,
+            district,
+            staname
+        ) VALUES
+        <foreach collection="param.paramList" item="item" separator=",">
+            (
+                #{param.province},
+                #{param.city},
+                #{param.district},
+                #{item.staname}
+            )
+        </foreach>
+    </insert>
+</mapper>

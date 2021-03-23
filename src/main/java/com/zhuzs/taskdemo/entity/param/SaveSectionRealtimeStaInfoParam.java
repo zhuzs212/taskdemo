@@ -117,6 +117,11 @@ public class SaveSectionRealtimeStaInfoParam {
      */
     private String ph_v;
 
+    /**
+     * 状态
+     */
+    private String status;
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof SaveSectionRealtimeStaInfoParam) {

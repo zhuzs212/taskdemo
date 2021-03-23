@@ -171,7 +171,6 @@ public class AliCloudApiRealtimeStaInfoService {
              */
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, queryParam);
 
-
             //获取返回数据状态，get获取的字段需要根据提供的返回值去获取
             if (200 == response.getStatusLine().getStatusCode()) {
                 //转换成JSON格式

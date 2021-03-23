@@ -74,7 +74,8 @@
         water_temp,
         conductivity,
         algal_density,
-        ph_v
+        ph_v,
+        status
         )VALUES
         <foreach collection="listParam" item="item" separator=",">(
             #{item.turbidity},
@@ -95,7 +96,8 @@
             #{item.water_temp},
             #{item.conductivity},
             #{item.algal_density},
-            #{item.ph_v}
+            #{item.ph_v},
+            #{item.status}
             )
         </foreach>
     </insert>

@@ -7,11 +7,11 @@
 	</appender>
 
 	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-<!--		<file>/Users/zhuzs/Documents/file/logs/task-server/task-server.log</file>-->
-		<file>/data/java/logs/task-server/task-server.log</file>
+		<file>/Users/zhuzs/Documents/file/logs/task-server/task-server.log</file>
+<!--		<file>/data/java/logs/task-server/task-server.log</file>-->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-<!--			<fileNamePattern>/Users/zhuzs/Documents/file/logs/task-server/task-server.log.%d{yyyy-MM-dd}.log</fileNamePattern>-->
-			<fileNamePattern>/data/java/logs/task-server/task-server.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>/Users/zhuzs/Documents/file/logs/task-server/task-server.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+<!--			<fileNamePattern>/data/java/logs/task-server/task-server.log.%d{yyyy-MM-dd}.log</fileNamePattern>-->
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
 		<encoder>

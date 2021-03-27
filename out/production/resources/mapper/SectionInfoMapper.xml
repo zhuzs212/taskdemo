@@ -45,14 +45,18 @@
             province,
             city,
             district,
-            staname
+            staname,
+            longitude,
+            latitude
         ) VALUES
         <foreach collection="param.paramList" item="item" separator=",">
             (
                 #{param.province},
                 #{param.city},
                 #{param.district},
-                #{item.staname}
+                #{item.staname},
+                #{item.longitude},
+                #{item.latitude}
             )
         </foreach>
     </insert>

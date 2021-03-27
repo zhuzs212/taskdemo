@@ -1,6 +1,6 @@
 # server配置
 server:
-  port: 8088
+  port: 8089
   tomcat:
     uri-encoding: UTF-8
   servlet:

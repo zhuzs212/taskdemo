@@ -119,7 +119,7 @@ public class AliCloudApiRealtimeStaInfoService {
                 log.info("【断面】数据本地持久化结束" + "，新增 " + newList.size() + "条数据！");
             }
 
-            // 根据待新增数据的断面名称Set，查询断面 TODO 考虑做缓存处理
+            // 根据待新增数据的断面，查询断面 TODO 考虑做缓存处理
             List<SectionInfoDO> sectionInfoDOList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setSectionInfoNameSet(sectionInfoNameSet).setProvince(PROVINCE));
             // 断面 与 断面实时数据信息做映射处理
             if (!CollectionUtils.isEmpty(sectionInfoDOList)) {

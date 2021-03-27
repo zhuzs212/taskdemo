@@ -47,7 +47,6 @@ public class AliCloudApiRealtimeStaInfoService {
     /**
      * 数据入库
      */
-    @Transactional(rollbackFor = Exception.class)
     public void saveRealtimeStaInfoBatch() {
         // 调用阿里API
         log.info("开始调用阿里API...");
@@ -112,13 +111,6 @@ public class AliCloudApiRealtimeStaInfoService {
 
             }
 
-            // 有新增断面，则维护到本地数据库
-            if (!CollectionUtils.isEmpty(newList)) {
-                log.info("存在新增断面，【断面】数据本地持久化开始...");
-                sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(PROVINCE));
-                log.info("【断面】数据本地持久化结束" + "，新增 " + newList.size() + "条数据！");
-            }
-
             // 根据待新增数据的断面，查询断面 TODO 考虑做缓存处理
             List<SectionInfoDO> sectionInfoDOList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setSectionInfoNameSet(sectionInfoNameSet).setProvince(PROVINCE));
             // 断面 与 断面实时数据信息做映射处理
@@ -129,6 +121,13 @@ public class AliCloudApiRealtimeStaInfoService {
                                 .filter(saveSectionParam -> saveSectionParam.getStaname().equals(sectionInfoDO.getStaname()))
                                 .forEach(saveSectionParam -> saveSectionParam.setSection_info_id(sectionInfoDO.getId()))
                 );
+            }
+
+            // 有新增断面，则维护到本地数据库
+            if (!CollectionUtils.isEmpty(newList)) {
+                log.info("存在新增断面，【断面】数据本地持久化开始...");
+                sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(PROVINCE));
+                log.info("【断面】数据本地持久化结束" + "，新增 " + newList.size() + "条数据！");
             }
 
             log.info("【断面实时数据信息】数据本地持久化开始...data:{}" + sourceSectionRealtimeStaInfList);

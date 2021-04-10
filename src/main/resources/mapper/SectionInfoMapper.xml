@@ -22,7 +22,7 @@
     <select id="getSectionInfoList" resultMap="SectionInfoDO">
         SELECT
         <include refid="Section_Info_Column"/>
-        FROM gis_section_info
+        FROM gis_section_info_copy1
         WHERE
         province = #{param.province}
         <if test="param.city != null and param.city != ''">
@@ -41,7 +41,7 @@
 
     <!--  批量新增断面信息  -->
     <insert id="addBatch">
-        INSERT INTO gis_section_info(
+        INSERT INTO gis_section_info_copy1(
             province,
             city,
             district,

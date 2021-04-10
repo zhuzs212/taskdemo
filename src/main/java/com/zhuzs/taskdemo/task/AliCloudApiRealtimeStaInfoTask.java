@@ -25,7 +25,7 @@ public class AliCloudApiRealtimeStaInfoTask {
     @Scheduled(cron = "1 10 0,4,8,12,16,20 * * ?")
     public void realtimeStaInfoTask() {
         log.info("定时任务执行开始...");
-        aliCloudApiRealtimeStaInfoService.saveRealtimeStaInfoBatch();
+        aliCloudApiRealtimeStaInfoService.saveRealtimeStaInfo();
         log.info("定时任务执行结束...");
     }
 }

@@ -55,7 +55,7 @@
 
     <!--  批量新增断面信息  -->
     <insert id="addBach">
-        INSERT INTO gis_section_copy1(
+        INSERT INTO gis_section(
         turbidity,
         staname,
         section_info_id,
@@ -106,7 +106,7 @@
     <select id="getExistDataList" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
-        FROM gis_section_copy1
+        FROM gis_section
         WHERE
         province = #{param.province}
         AND staname IN

@@ -14,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
@@ -45,13 +44,28 @@ public class AliCloudApiRealtimeStaInfoService {
     private SectionInfoMapper sectionInfoMapper;
 
     /**
-     * 数据入库
+     * 同步全国断面信息
      */
-    public void saveRealtimeStaInfoBatch() {
+    public void saveRealtimeStaInfo(){
+        // 获取所有省份信息
+        List<String> provinceList = sectionInfoMapper.getProvinceNameList();
+        if(CollectionUtils.isEmpty(provinceList)){
+            // 默认获取江苏省断面信息
+            provinceList.add(PROVINCE);
+        }
+        // 遍历省份，同步断面信息
+        provinceList.forEach(province->saveRealtimeStaInfoBatch(province));
+    }
+    /**
+     * 同步断面信息
+     * @param province 省份
+     */
+    public void saveRealtimeStaInfoBatch(String province) {
+
         // 调用阿里API
         log.info("开始调用阿里API...");
         JSONArray jsonArray;
-        jsonArray = getRealtimeStaInfo();
+        jsonArray = getRealtimeStaInfo(province);
         log.info("调用阿里API结束...");
         if (jsonArray != null ? !jsonArray.isEmpty() : false) {
             long startTime = System.currentTimeMillis();
@@ -74,7 +88,7 @@ public class AliCloudApiRealtimeStaInfoService {
                 查询是否存在重复数据（断面实时数据信息）
                 场景：初始化任务、重启任务时
              */
-            List<SaveSectionRealtimeStaInfoParam> existDataList = getExistDataList(new QueryExistDataParam().setSourceSectionList(sourceSectionRealtimeStaInfList).setProvince(PROVINCE));
+            List<SaveSectionRealtimeStaInfoParam> existDataList = getExistDataList(new QueryExistDataParam().setSourceSectionList(sourceSectionRealtimeStaInfList).setProvince(province));
             if (!CollectionUtils.isEmpty(existDataList)) {
                 // 存在，则过滤掉重复数据
                 sourceSectionRealtimeStaInfList.removeAll(existDataList);
@@ -94,7 +108,7 @@ public class AliCloudApiRealtimeStaInfoService {
              */
 
             // 获取所有断面
-            List<SectionInfoDO> sectionInfoList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setProvince(PROVINCE));
+            List<SectionInfoDO> sectionInfoList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setProvince(province));
 
             // 过滤所有已存在断面
             List<SaveSectionRealtimeStaInfoParam> newList = new ArrayList<>(sourceSectionRealtimeStaInfList.size());
@@ -114,12 +128,12 @@ public class AliCloudApiRealtimeStaInfoService {
             // 有新增断面，则维护到本地数据库
             if (!CollectionUtils.isEmpty(newList)) {
                 log.info("存在新增断面，【断面】数据本地持久化开始...");
-                sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(PROVINCE));
+                sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(province));
                 log.info("【断面】数据本地持久化结束" + "，新增 " + newList.size() + "条数据！");
             }
 
-            // 根据待新增数据的断面，查询断面 TODO 考虑做缓存处理
-            List<SectionInfoDO> sectionInfoDOList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setSectionInfoNameSet(sectionInfoNameSet).setProvince(PROVINCE));
+            // 根据待新增数据的断面，查询断面
+            List<SectionInfoDO> sectionInfoDOList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setSectionInfoNameSet(sectionInfoNameSet).setProvince(province));
             // 断面 与 断面实时数据信息做映射处理
             if (!CollectionUtils.isEmpty(sectionInfoDOList)) {
                 // 设置断面ID
@@ -145,7 +159,7 @@ public class AliCloudApiRealtimeStaInfoService {
      * @author zhu_zishuang
      * @date 3/19/21
      */
-    private JSONArray getRealtimeStaInfo() {
+    private JSONArray getRealtimeStaInfo(String province) {
         String host = "https://naswater.market.alicloudapi.com";
         String path = "/api/stainfo/station_realtime";
         String method = "GET";
@@ -156,7 +170,7 @@ public class AliCloudApiRealtimeStaInfoService {
         Map<String, String> queryParam = new HashMap<>(10);
         queryParam.put("pageNum", "1");
         queryParam.put("pageSize", "2000");
-        queryParam.put("province", PROVINCE);
+        queryParam.put("province", province);
 
         try {
             /*

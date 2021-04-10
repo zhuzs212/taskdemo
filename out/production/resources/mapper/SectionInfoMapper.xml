@@ -60,4 +60,10 @@
             )
         </foreach>
     </insert>
+
+    <select id="getProvinceNameList" resultType="String">
+        SELECT name
+        FROM sys_city
+        WHERE LEVEL = 1 AND mark = 1;
+    </select>
 </mapper>

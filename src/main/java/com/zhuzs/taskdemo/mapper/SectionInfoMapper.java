@@ -3,6 +3,7 @@ package com.zhuzs.taskdemo.mapper;
 import com.zhuzs.taskdemo.entity.domain.SectionInfoDO;
 import com.zhuzs.taskdemo.entity.param.QuerySectionInfoParam;
 import com.zhuzs.taskdemo.entity.param.SaveBatchSectionInfoParam;
+import com.zhuzs.taskdemo.entity.param.SaveSectionRealtimeStaInfoParam;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -28,4 +29,11 @@ public interface SectionInfoMapper {
      * @return 受影响的行数
      */
     int addBatch(@Param("param")SaveBatchSectionInfoParam param);
+
+
+    /**
+     * 获取所有省份名称
+     * @return 所有省份名称
+     */
+    List<String> getProvinceNameList();
 }

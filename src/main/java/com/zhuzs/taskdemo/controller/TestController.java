@@ -22,7 +22,7 @@ public class TestController {
      */
     @RequestMapping("/list")
     public void getRealtimeStaInfo() {
-        service.saveRealtimeStaInfoBatch();
+        service.saveRealtimeStaInfo();
     }
 }
 

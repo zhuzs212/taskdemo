@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d41e4c0-9bf5-4db0-ab6e-fb7a86ee95fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6d41e4c0-9bf5-4db0-ab6e-fb7a86ee95fa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -72,7 +70,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -109,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -118,17 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="taskdemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taskdemo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -296,7 +288,7 @@
       <workItem from="1618019508307" duration="3758000" />
       <workItem from="1618037258233" duration="47000" />
       <workItem from="1618041055803" duration="1503000" />
-      <workItem from="1618043854618" duration="487000" />
+      <workItem from="1618043854618" duration="2527000" />
     </task>
     <task id="LOCAL-00001" summary="1.修改配置文件；">
       <created>1616471653492</created>
@@ -340,16 +332,23 @@
       <option name="project" value="LOCAL" />
       <updated>1618041321865</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="【修改】&#10;1.若存在新增断面信息，则首先保存断面信息再做断面实时数据与断面ID关系映射">
+      <created>1618044535017</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618044535017</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20440000" />
+    <option name="totallyTimeSpent" value="22480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15262516" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11904762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -368,12 +367,12 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" visible="true" weight="0.47142857" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.45726496" side_tool="true" visible="true" weight="0.33163264" />
       <window_info anchor="bottom" id="SonarLint" order="12" />
       <window_info anchor="bottom" id="Problems" order="13" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Version Control" order="16" sideWeight="0.4993895" visible="true" weight="0.47142857" />
+      <window_info anchor="bottom" id="Version Control" order="16" sideWeight="0.54273504" visible="true" weight="0.33163264" />
       <window_info anchor="bottom" id="MyBatis Log" order="17" />
       <window_info anchor="bottom" id="Messages" order="18" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -540,7 +539,11 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

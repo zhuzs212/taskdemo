@@ -27,9 +27,9 @@ public class AdminRunner implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
-        log.info("任务初始化执行开始...");
+        log.info("【国控地表水实时数据】定时任务执行开始...");
         aliCloudApiRealtimeStaInfoService.saveRealtimeStaInfo();
-        log.info("任务初始化执行结束...");
+        log.info("【国控地表水实时数据】定时任务执行结束...");
 
     }
 }

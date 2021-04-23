@@ -21,7 +21,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 阿里云实时站数据获取业务
+ * 国控地表水实时数据批量接口获取业务
  *
  * @author zhu_zishuang
  * @date 3/17/21
@@ -44,37 +44,46 @@ public class AliCloudApiRealtimeStaInfoService {
     private SectionInfoMapper sectionInfoMapper;
 
     /**
+     * 注入断面站点信息Mapper
+     */
+    @Resource
+    private AliCloudApiStaInfoService apiStaInfoService;
+
+    /**
      * 同步全国断面信息
      */
-    public void saveRealtimeStaInfo(){
+    public void saveRealtimeStaInfo() {
         // 获取所有省份信息
         List<String> provinceList = sectionInfoMapper.getProvinceNameList();
-        if(CollectionUtils.isEmpty(provinceList)){
+        if (CollectionUtils.isEmpty(provinceList)) {
             // 默认获取江苏省断面信息
             provinceList.add(PROVINCE);
         }
         // 遍历省份，同步断面信息
-        provinceList.forEach(province->saveRealtimeStaInfoBatch(province));
+        provinceList.forEach(province -> saveRealtimeStaInfoBatch(province));
     }
+
     /**
      * 同步断面信息
+     *
      * @param province 省份
      */
     public void saveRealtimeStaInfoBatch(String province) {
 
         // 调用阿里API
-        log.info("开始调用阿里API...");
+        log.info("获取【国控地表水实时数据】开始...");
         JSONArray jsonArray;
         jsonArray = getRealtimeStaInfo(province);
-        log.info("调用阿里API结束...");
+        log.info("获取【国控地表水实时数据】结束...");
         if (jsonArray != null ? !jsonArray.isEmpty() : false) {
             long startTime = System.currentTimeMillis();
             // 断面实时数据信息对象 集合
             List<SaveSectionRealtimeStaInfoParam> sourceSectionRealtimeStaInfList = JSONArray.parseArray(jsonArray.toJSONString(), SaveSectionRealtimeStaInfoParam.class);
             if (CollectionUtils.isEmpty(sourceSectionRealtimeStaInfList)) {
-                log.info("调用阿里API,返回结果为空！");
+                log.info("获取【国控地表水实时数据】,返回结果为空！");
                 return;
             }
+            log.info("【国控地表水实时数据】，做特殊字符处理开始...");
             // 特殊字符处理，如:'(',')','（','）'，' '
             sourceSectionRealtimeStaInfList.forEach(param -> {
                 // 时间字段处理
@@ -83,6 +92,7 @@ public class AliCloudApiRealtimeStaInfoService {
                     param.setStaname(staName.replace("(", "-").replace(")", "").replace("（", "-").replace("）", "").trim());
                 }
             });
+            log.info("【国控地表水实时数据】，特殊字符处理结束...");
 
             /*
                 查询是否存在重复数据（断面实时数据信息）
@@ -96,6 +106,7 @@ public class AliCloudApiRealtimeStaInfoService {
 
             // 数据本地持久化
             if (CollectionUtils.isEmpty(sourceSectionRealtimeStaInfList)) {
+                log.info("无【断面信息】数据持久化...");
                 return;
             }
 
@@ -127,9 +138,9 @@ public class AliCloudApiRealtimeStaInfoService {
 
             // 有新增断面，则维护到本地数据库
             if (!CollectionUtils.isEmpty(newList)) {
-                log.info("存在新增断面，【断面】数据本地持久化开始...");
+                log.info("【断面信息】数据本地持久化，开始...");
                 sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(province));
-                log.info("【断面】数据本地持久化结束" + "，新增 " + newList.size() + "条数据！");
+                log.info("【断面信息】数据本地持久化，结束" + "，新增 " + newList.size() + "条数据！");
             }
 
             // 根据待新增数据的断面，查询断面
@@ -144,9 +155,9 @@ public class AliCloudApiRealtimeStaInfoService {
                 );
             }
 
-            log.info("【断面实时数据信息】数据本地持久化开始...data:{}" + sourceSectionRealtimeStaInfList);
+            log.info("【国控地表水实时数据】本地持久化，开始...Params：{}" + sourceSectionRealtimeStaInfList);
             sectionMapper.addBach(sourceSectionRealtimeStaInfList);
-            log.info("【断面实时数据信息】数据本地持久化结束...");
+            log.info("【国控地表水实时数据】本地持久化，结束...");
             long endTime = System.currentTimeMillis();
             log.info(" 耗时 ：" + (endTime - startTime) + "ms, 新增 " + sourceSectionRealtimeStaInfList.size() + "条数据！");
         }

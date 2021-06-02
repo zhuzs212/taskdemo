@@ -54,7 +54,7 @@ public class AliCloudApiStaInfoService {
         log.info("获取【国控地表水站点列表】开始...");
         JSONArray jsonArray;
         jsonArray = getStationsInfo(province);
-        log.info("获取【国控地表水站点列表】开始...");
+        log.info("获取【国控地表水站点列表】结束...");
         if (jsonArray != null ? !jsonArray.isEmpty() : false) {
             long startTime = System.currentTimeMillis();
             // 断面实时数据信息对象 集合

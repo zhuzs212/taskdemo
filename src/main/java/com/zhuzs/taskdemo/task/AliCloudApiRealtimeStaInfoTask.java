@@ -40,7 +40,7 @@ public class AliCloudApiRealtimeStaInfoTask {
      * 国控地表水站点列表接口
      */
     // {秒数} {分钟} {小时} {日期} {月份} {星期} {年份(可为空)}
-    @Scheduled(cron = "1 10 0,4,8,12,16,20 * * ?")
+//    @Scheduled(cron = "1 10 0,4,8,12,16,20 * * ?")
     public void staInfoTask() {
         log.info("【国控地表水站点列表】定时任务执行开始...");
         apiStaInfoService.saveStationsInfo();

@@ -155,7 +155,7 @@ public class AliCloudApiRealtimeStaInfoService {
                 );
             }
 
-            log.info("【国控地表水实时数据】本地持久化，开始...Params：{}" + sourceSectionRealtimeStaInfList);
+//            log.info("【国控地表水实时数据】本地持久化，开始...Params：{}" + sourceSectionRealtimeStaInfList);
             sectionMapper.addBach(sourceSectionRealtimeStaInfList);
             log.info("【国控地表水实时数据】本地持久化，结束...");
             long endTime = System.currentTimeMillis();

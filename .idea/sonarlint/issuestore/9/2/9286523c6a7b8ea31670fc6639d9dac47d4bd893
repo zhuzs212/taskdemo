@@ -1,0 +1,31 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ìˆ¼á8ÉÛÑ°/
+b	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(şºĞŒ8ÊÛÑ°/
+b	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ü„Ì¿8ÊÛÑ°/
+b	java:S112F"FDefine and throw a dedicated exception instead of using a generic one.(ø•ã8ÊÛÑ°/
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ö¯çøÿÿÿÿ8ĞÛÑ°/
+g
+java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(•¦Š§8ÖÛÑ°/
+g
+java:S2674-"JCheck the return value of the "read" call to see how many bytes were read.(•¦Š§8ÙÛÑ°/
+Y
+java:S1854I"<Remove this useless assignment to local variable "fileType".(ª²—8ßÛÑ°/
+J
+java:S1481I"-Remove this unused "fileType" local variable.(ª²—8äÛÑ°/
+G
+java:S5869X"*Remove duplicates in this character class.(äë…Å8„ÜÑ°/
+T
+java:S1135Z"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8“ÜÑ°/
+W
+java:S1854e"5Remove this useless assignment to local variable "b".(âº âüÿÿÿÿ8•ÜÑ°/
+W
+java:S1191"5Use classes from the Java API instead of Sun classes.(Ó¨Ôÿÿÿÿÿ8¤ÜÑ°/
+c
+java:S2259I"FA "NullPointerException" could be thrown; "fileName" is nullable here.(ª²—8ÏÜÑ°/
+j
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ú€„¹8ĞÜÑ°/
+o
+java:S2095*"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¶ÈÖëşÿÿÿÿ8ĞÜÑ°/
+p
+java:S2095:"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(öÖĞ»úÿÿÿÿ8ÑÜÑ°/

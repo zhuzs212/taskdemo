@@ -4,57 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d41e4c0-9bf5-4db0-ab6e-fb7a86ee95fa" name="Default Changelist" comment="&#10;【修改】&#10;1.暂停站点列表请求服务；">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/config/MQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/controller/mq/MqController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/controller/mq/MqParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/controller/mq/Provide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/controller/redis/RedisDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/utils/BASE64DecodedMultipartFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/utils/Base64Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/utils/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/taskdemo.iml" beforeDir="false" />
+    <list default="true" id="6d41e4c0-9bf5-4db0-ab6e-fb7a86ee95fa" name="Default Changelist" comment="&#10;【修改】&#10;1.IDEA工具、Gradle更新；">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/QuerySectionInfoParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/QuerySectionInfoParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/SaveBatchSectionInfoParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/SaveBatchSectionInfoParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/SaveBatchStationsInfoParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/entity/param/SaveBatchStationsInfoParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AdminRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AdminRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AliCloudApiRealtimeStaInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AliCloudApiRealtimeStaInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AliCloudApiStaInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/service/AliCloudApiStaInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/task/AliCloudApiRealtimeStaInfoTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhuzs/taskdemo/task/AliCloudApiRealtimeStaInfoTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,7 +425,8 @@
       <workItem from="1627955215981" duration="1853000" />
       <workItem from="1627957124155" duration="4697000" />
       <workItem from="1627962735276" duration="2070000" />
-      <workItem from="1627968156016" duration="2495000" />
+      <workItem from="1627968156016" duration="5604000" />
+      <workItem from="1627975809279" duration="999000" />
     </task>
     <task id="LOCAL-00001" summary="1.修改配置文件；">
       <created>1616471653492</created>
@@ -546,7 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622599457599</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="&#10;【修改】&#10;1.IDEA工具、Gradle更新；">
+      <created>1627973048655</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1627973048655</updated>
+    </task>
+    <task id="LOCAL-00012" summary="&#10;【修改】&#10;1.IDEA工具、Gradle更新；">
+      <created>1627973455233</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1627973455233</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -681,7 +647,8 @@
     <MESSAGE value="【修改】&#10;1.若存在新增断面信息，则首先保存断面信息再做断面实时数据与断面ID关系映射" />
     <MESSAGE value="【新增】&#10;1.新增站点信息列表维护定时任务；&#10;【修改】&#10;2.完善注释；" />
     <MESSAGE value="&#10;【修改】&#10;1.暂停站点列表请求服务；" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;【修改】&#10;1.暂停站点列表请求服务；" />
+    <MESSAGE value="&#10;【修改】&#10;1.IDEA工具、Gradle更新；" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;【修改】&#10;1.IDEA工具、Gradle更新；" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

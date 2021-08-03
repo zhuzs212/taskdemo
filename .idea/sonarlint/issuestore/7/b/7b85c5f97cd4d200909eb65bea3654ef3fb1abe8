@@ -1,0 +1,13 @@
+
+{	java:S116"ZRename this field "section_info_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èğàîûÿÿÿÿ8ìÚÑ°/
+p	java:S116)"ORename this field "pp_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¡§•úÿÿÿÿ8ïÚÑ°/
+p	java:S116."ORename this field "tp_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¦¦ûÿÿÿÿ8ïÚÑ°/
+k	java:S1163"ORename this field "tn_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Şà¥8ğÚÑ°/
+n	java:S116N"RRename this field "water_l" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´Íº8ğÚÑ°/
+j	java:S116X"ORename this field "an_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıüÀ08ñÚÑ°/
+p	java:S116]"ORename this field "do_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º™…üşÿÿÿÿ8ñÚÑ°/
+q	java:S116g"URename this field "water_temp" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¿Ø8òÚÑ°/
+t	java:S116q"XRename this field "algal_density" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅËıÚ8òÚÑ°/
+p	java:S116v"ORename this field "ph_v" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¾‹®ÿÿÿÿÿ8óÚÑ°/
+m
+java:S1206~"PThis class overrides "equals()" and should therefore also override "hashCode()".(ÜÑã8ôÚÑ°/

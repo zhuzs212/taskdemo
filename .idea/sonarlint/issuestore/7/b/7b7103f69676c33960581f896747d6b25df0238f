@@ -1,0 +1,16 @@
+
+b	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(ø•ã8çÕÑ°/
+g	java:S112p"FDefine and throw a dedicated exception instead of using a generic one.(¥©Íûÿÿÿÿ8èÕÑ°/
+h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(şÿı¸üÿÿÿÿ8èÕÑ°/
+C
+java:S1168&"&Return an empty array instead of null.(¥¹ï8”ÖÑ°/
+C
+java:S1168>"&Return an empty array instead of null.(¥¹ï8™ÖÑ°/
+L
+java:S2093L"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8«ÖÑ°/
+^	java:S125†"<This block of commented-out lines of code should be removed.(ÒÂÂŞøÿÿÿÿ8»ÖÑ°/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(ò¦Úé8ÂÖÑ°/
+o
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¾¡½ßÿÿÿÿÿ8é×Ñ°/
+q
+java:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ş›”Êùÿÿÿÿ8é×Ñ°/

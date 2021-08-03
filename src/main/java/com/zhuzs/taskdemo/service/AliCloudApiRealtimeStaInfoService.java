@@ -59,7 +59,7 @@ public class AliCloudApiRealtimeStaInfoService {
             // 默认获取江苏省断面信息
             provinceList.add(PROVINCE);
         }
-        // 遍历省份，同步断面信息
+        // 遍历省份,同步断面信息
         provinceList.forEach(province -> saveRealtimeStaInfoBatch(province));
     }
 
@@ -83,8 +83,8 @@ public class AliCloudApiRealtimeStaInfoService {
                 log.info("获取【国控地表水实时数据】,返回结果为空！");
                 return;
             }
-            log.info("【国控地表水实时数据】，做特殊字符处理开始...");
-            // 特殊字符处理，如:'(',')','（','）'，' '
+            log.info("【国控地表水实时数据】,做特殊字符处理开始...");
+            // 特殊字符处理,如:'(',')','（','）',' '
             sourceSectionRealtimeStaInfList.forEach(param -> {
                 // 时间字段处理
                 String staName = param.getStaname();
@@ -92,7 +92,7 @@ public class AliCloudApiRealtimeStaInfoService {
                     param.setStaname(staName.replace("(", "-").replace(")", "").replace("（", "-").replace("）", "").trim());
                 }
             });
-            log.info("【国控地表水实时数据】，特殊字符处理结束...");
+            log.info("【国控地表水实时数据】,特殊字符处理结束...");
 
             /*
                 查询是否存在重复数据（断面实时数据信息）
@@ -100,7 +100,7 @@ public class AliCloudApiRealtimeStaInfoService {
              */
             List<SaveSectionRealtimeStaInfoParam> existDataList = getExistDataList(new QueryExistDataParam().setSourceSectionList(sourceSectionRealtimeStaInfList).setProvince(province));
             if (!CollectionUtils.isEmpty(existDataList)) {
-                // 存在，则过滤掉重复数据
+                // 存在,则过滤掉重复数据
                 sourceSectionRealtimeStaInfList.removeAll(existDataList);
             }
 
@@ -114,8 +114,8 @@ public class AliCloudApiRealtimeStaInfoService {
             Set<String> sectionInfoNameSet = sourceSectionRealtimeStaInfList.stream().map(SaveSectionRealtimeStaInfoParam::getStaname).collect(Collectors.toSet());
 
             /*
-                检验待新增数据中，是否存在新增的断面。
-                存在，则需要将新增的断面维护到本地数据库，并与断面实时数据信息做映射
+                检验待新增数据中,是否存在新增的断面。
+                存在,则需要将新增的断面维护到本地数据库,并与断面实时数据信息做映射
              */
 
             // 获取所有断面
@@ -136,14 +136,14 @@ public class AliCloudApiRealtimeStaInfoService {
 
             }
 
-            // 有新增断面，则维护到本地数据库
+            // 有新增断面,则维护到本地数据库
             if (!CollectionUtils.isEmpty(newList)) {
-                log.info("【断面信息】数据本地持久化，开始...");
+                log.info("【断面信息】数据本地持久化,开始...");
                 sectionInfoMapper.addBatch(new SaveBatchSectionInfoParam().setParamList(newList).setProvince(province));
-                log.info("【断面信息】数据本地持久化，结束" + "，新增 " + newList.size() + "条数据！");
+                log.info("【断面信息】数据本地持久化,结束" + ",新增 " + newList.size() + "条数据！");
             }
 
-            // 根据待新增数据的断面，查询断面
+            // 根据待新增数据的断面,查询断面
             List<SectionInfoDO> sectionInfoDOList = sectionInfoMapper.getSectionInfoList(new QuerySectionInfoParam().setSectionInfoNameSet(sectionInfoNameSet).setProvince(province));
             // 断面 与 断面实时数据信息做映射处理
             if (!CollectionUtils.isEmpty(sectionInfoDOList)) {
@@ -155,9 +155,9 @@ public class AliCloudApiRealtimeStaInfoService {
                 );
             }
 
-//            log.info("【国控地表水实时数据】本地持久化，开始...Params：{}" + sourceSectionRealtimeStaInfList);
+//            log.info("【国控地表水实时数据】本地持久化,开始...Params：{}" + sourceSectionRealtimeStaInfList);
             sectionMapper.addBach(sourceSectionRealtimeStaInfList);
-            log.info("【国控地表水实时数据】本地持久化，结束...");
+            log.info("【国控地表水实时数据】本地持久化,结束...");
             long endTime = System.currentTimeMillis();
             log.info(" 耗时 ：" + (endTime - startTime) + "ms, 新增 " + sourceSectionRealtimeStaInfList.size() + "条数据！");
         }
@@ -195,7 +195,7 @@ public class AliCloudApiRealtimeStaInfoService {
              */
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, queryParam);
 
-            //获取返回数据状态，get获取的字段需要根据提供的返回值去获取
+            //获取返回数据状态,get获取的字段需要根据提供的返回值去获取
             if (200 == response.getStatusLine().getStatusCode()) {
                 //转换成JSON格式
                 JSONObject dataJson = JSONObject.parseObject(EntityUtils.toString(response.getEntity()));

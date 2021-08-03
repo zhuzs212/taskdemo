@@ -31,9 +31,9 @@ public class AliCloudApiRealtimeStaInfoTask {
     // {秒数} {分钟} {小时} {日期} {月份} {星期} {年份(可为空)}
     @Scheduled(cron = "1 20 0,4,8,12,16,20 * * ?")
     public void realtimeStaInfoTask() {
-        log.info("【国控地表水实时数据】定时任务执行开始...");
-        aliCloudApiRealtimeStaInfoService.saveRealtimeStaInfo();
-        log.info("【国控地表水实时数据】定时任务执行结束...");
+//        log.info("【国控地表水实时数据】定时任务执行开始...");
+//        aliCloudApiRealtimeStaInfoService.saveRealtimeStaInfo();
+//        log.info("【国控地表水实时数据】定时任务执行结束...");
     }
 
     /**
@@ -42,9 +42,9 @@ public class AliCloudApiRealtimeStaInfoTask {
     // {秒数} {分钟} {小时} {日期} {月份} {星期} {年份(可为空)}
 //    @Scheduled(cron = "1 10 0,4,8,12,16,20 * * ?")
     public void staInfoTask() {
-        log.info("【国控地表水站点列表】定时任务执行开始...");
-        apiStaInfoService.saveStationsInfo();
-        log.info("【国控地表水站点列表】定时任务执行结束...");
+//        log.info("【国控地表水站点列表】定时任务执行开始...");
+//        apiStaInfoService.saveStationsInfo();
+//        log.info("【国控地表水站点列表】定时任务执行结束...");
     }
 }
 

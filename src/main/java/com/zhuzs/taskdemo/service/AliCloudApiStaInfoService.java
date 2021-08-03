@@ -45,7 +45,7 @@ public class AliCloudApiStaInfoService {
             // 默认获取江苏省断面站点信息
             provinceList.add(PROVINCE);
         }
-        // 遍历省份，获取断面站点信息
+        // 遍历省份,获取断面站点信息
         provinceList.forEach(province -> saveStationsInfo(province));
     }
 
@@ -63,7 +63,7 @@ public class AliCloudApiStaInfoService {
                 log.info("【国控地表水站点列表】,返回结果为空！");
                 return;
             }
-            // 特殊字符处理，如:'(',')','（','）'，' '
+            // 特殊字符处理,如:'(',')','（','）',' '
             log.info("【国控地表水站点列表】数据,特殊字符处理...");
             sourceStationsInfList.forEach(param -> {
                 // 时间字段处理
@@ -72,7 +72,7 @@ public class AliCloudApiStaInfoService {
                     param.setStaname(staName.replace("(", "-").replace(")", "").replace("（", "-").replace("）", "").trim());
                 }
             });
-            log.info("【国控地表水站点列表】数据，特殊字符处理结束...");
+            log.info("【国控地表水站点列表】数据,特殊字符处理结束...");
 
             // 已存在断面站点信息
             List<SaveBatchStationsInfoParam> existStationsInfoList = stationsInfoMapper.getExistStationsInfoList();
@@ -99,9 +99,9 @@ public class AliCloudApiStaInfoService {
             long endTime = System.currentTimeMillis();
             log.info(" 耗时 ：" + (endTime - startTime) + "ms, 新增 " + sourceStationsInfList.size() + "条数据！");
 
-            log.info("【断面信息】数据同步，开始...");
+            log.info("【断面信息】数据同步,开始...");
             stationsInfoMapper.syncData(province);
-            log.info("【断面信息】数据同步，结束...");
+            log.info("【断面信息】数据同步,结束...");
         }
     }
 
@@ -125,9 +125,9 @@ public class AliCloudApiStaInfoService {
         param.put("province", province);
 
         try {
-            //获取返回数据状态，get获取的字段需要根据提供的返回值去获取
+            //获取返回数据状态,get获取的字段需要根据提供的返回值去获取
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, param);
-            //获取返回数据状态，get获取的字段需要根据提供的返回值去获取
+            //获取返回数据状态,get获取的字段需要根据提供的返回值去获取
             if (200 == response.getStatusLine().getStatusCode()) {
                 //转换成JSON格式
                 JSONObject dataJson = JSONObject.parseObject(EntityUtils.toString(response.getEntity()));

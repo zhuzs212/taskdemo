@@ -1,6 +1,6 @@
 # server配置
 server:
-  port: 8089
+  port: 8082
   tomcat:
     uri-encoding: UTF-8
   servlet:
@@ -8,6 +8,25 @@ server:
 
 # spring配置
 spring:
+  rabbitmq:
+    host: 121.40.249.52
+    port: 5672
+    username: shuiwu
+    password: shuiwu
+    virtual-host: /shuiwu # 注意：这里前面不能带/,默认的“/”理解成字符串就行,和Linux的目录斜杠还不是一回事
+    publisher-confirms: true  #开启发送确认
+    publisher-returns: true  #开启发送失败回退
+
+    #开启ack
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual #采取手动应答
+        #concurrency: 1 # 指定最小的消费者数量
+        #max-concurrency: 1 #指定最大的消费者数量
+        retry:
+          enabled: true # 是否支持重试
   # 连接池
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -15,6 +34,38 @@ spring:
     url: jdbc:mysql://47.98.157.120:3306/gisadmin.v1.3?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8&useSSL=true&tinyInt1isBit=false&allowMultiQueries=true
     username: root
     password: idontcare
+
+    # redis
+    redis:
+      #redis服务器地址
+      host: localhost
+      port: 6379
+      password:
+      database: 1
+      #redis连接超时时间（毫秒）
+      timeout: 18000
+      #lettuce连接池配置 springboot2.x后默认使用Lettuce:
+      #lettuce:
+      jedis:
+        pool:
+          # 连接池最小空闲连接
+          min-idle: 1
+          # 连接池最大空闲连接
+          max-idle: 5
+          # 连接池最大连接数（使用负值表示没有限制）
+          max-active: 8
+          # 连接池最大空闲连接（使用负值表示没有限制）
+          max-wait: -1
+
+      # 消息发送到交换机确认机制,是否确认回调
+      publisher-returns: true
+
+
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 200MB
+
 
 # MyBatisPlus 配置
 mybatis-plus:

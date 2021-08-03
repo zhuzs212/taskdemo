@@ -4,14 +4,13 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 /**
- * 批量新增断面站点信息 入参
+ * 批量 新增断面站点信息 入参
  * @author zhu_zishuang
  * @date 3/20/21
  */
 @Data
 @Accessors(chain = true)
 public class SaveBatchStationsInfoParam {
-
     /**
      * 主键ID
      */

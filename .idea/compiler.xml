@@ -3,6 +3,25 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/Downloads/file/local_repository_mvn/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+        </processorPath>
+        <module name="stations_info_task.main" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="Stati.main" target="1.8" />
+      <module name="Stati.test" target="1.8" />
+      <module name="Stations.main" target="1.8" />
+      <module name="Stations.test" target="1.8" />
+      <module name="StationsInfo.main" target="1.8" />
+      <module name="StationsInfo.test" target="1.8" />
+      <module name="stationsInfoTask.main" target="1.8" />
+      <module name="stationsInfoTask.test" target="1.8" />
+      <module name="taskdemo.main" target="1.8" />
+      <module name="taskdemo.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

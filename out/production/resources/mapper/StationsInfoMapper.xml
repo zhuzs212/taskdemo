@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuzs.taskdemo.mapper.StationsInfoMapper">
+    <resultMap id="StationsInfoDO" type="com.zhuzs.taskdemo.entity.param.SaveBatchStationsInfoParam">
+        <id column="id" property="id"/>
+        <result column="staname" property="staname"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="district" property="district"/>
+    </resultMap>
+    <sql id="Stations_Info_Column">
+        id,
+        staname,
+        province,
+        city,
+        district,
+        mark
+    </sql>
+
+    <!--  查询已存在站点断面信息列表  -->
+    <select id="getExistStationsInfoList" resultMap="StationsInfoDO">
+        SELECT
+        <include refid="Stations_Info_Column"/>
+        FROM gis_stations_info
+        WHERE mark = 1;
+    </select>
+
+    <!--  批量新增断面信息  -->
+    <insert id="addBatch">
+        INSERT INTO gis_stations_info(
+        staname,
+        province,
+        city,
+        longitude,
+        latitude
+        ) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.staname},
+            #{item.province},
+            #{item.city},
+            #{item.longitude},
+            #{item.latitude}
+            )
+        </foreach>
+    </insert>
+
+    <!--  获取所有省份名称  -->
+    <select id="getProvinceNameList" resultType="String">
+        SELECT name
+        FROM sys_city
+        WHERE LEVEL = 1 AND mark = 1;
+    </select>
+
+    <!--  首先同步gis_stations_info中的坐标数据至gis_sectio；再同步 gis_section中的坐标数据至gis_section_info表  -->
+    <update id="syncData" parameterType="java.lang.String">
+
+        UPDATE gis_section s
+          JOIN gis_stations_info i ON (i.province = s.province AND i.staname = s.staname)
+           SET s.longitude = i.longitude,
+               s.latitude = i.latitude
+         where i.province = #{province};
+
+        UPDATE gis_section_info i
+          JOIN gis_section s ON s.section_info_id = i.id
+           SET i.longitude = s.longitude,
+               i.latitude = s.latitude
+         where i.province = #{province};
+
+    </update>
+</mapper>
